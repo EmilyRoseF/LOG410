@@ -17,7 +17,8 @@ skinparam Linetype agent
 rectangle "Projet Odyssée" {
   'CAS D'UTILISATION
   (CU01 - Récupérer les données dans les bases de données) as (CU01)
-  (CU02 - Afficher un dashboard) as (CU02)
+  (CU02 - Afficher le tableau de bord principal) as (CU02)
+  (CU03 - Afficher un tableau de bord) as (CU03)
   '(CU0X - Afficher les données dans un graphique) as (CU0X) 'Finalement ne correspond pas à CAR01, mais correspond à CAR02
   '(CU0X - Afficher les données dans un tableau) as (CU0X) 'Finalement ne correspond pas à CAR01, mais correspond à CAR02
 
@@ -25,13 +26,15 @@ rectangle "Projet Odyssée" {
   'LIENS ENTRE ACTEURS ET CAS D'UTILISATION
   AC01 --> (CU01)
   AC01 --> (CU02)
+  AC01 --> (CU03)
 
   (CU01) -- AC02
   (CU01) -- AC03
 
 
   'LIENS ENTRE LES CAS D'UTILISATION
-  (CU01) .> (CU02) : extend
+  (CU01) .left.> (CU02) : extend
+  (CU01) .> (CU03) : extend
 }
 
 @enduml
